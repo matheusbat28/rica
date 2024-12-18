@@ -204,6 +204,21 @@ export default function Home() {
                 </div>
             </div>
             {/* fim do nosso servicos */}
+
+            {/* entre em contato */}
+            <div className="container-2xl mx-auto mt-36 py-24 bg-gradient-to-r from-sea to-sea2">
+                <h1 className="uppercase text-center text-4xl text-white font-bold">entre em contato</h1>
+                <form action="">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
+                        <input type="text" placeholder="Nome" className="w-3/4 mx-auto p-5 rounded-lg " />
+                        <input type="email" placeholder="Email" className="w-3/4 mx-auto p-5 rounded-lg" />
+                        <input type="text" placeholder="Assunto" className="w-3/4 mx-auto p-5 rounded-lg" />
+                        <textarea name="" id="" cols="30" rows="2" placeholder="Mensagem" className="w-3/4 mx-auto p-5 rounded-lg"></textarea>
+                        <button className="w-1/3 mx-auto p-5 rounded-lg bg-white text-sea font-bold md:ml-28">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            {/* fim do entre em contato */}
             <Footer />
         </div>
     );

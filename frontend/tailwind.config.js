@@ -5,6 +5,7 @@ const config = {
     extend: {
       colors: {
         'sea': '#3971BC',
+        'sea2': '#0D94C6',
       },
     },
   },
