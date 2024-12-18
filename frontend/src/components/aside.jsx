@@ -9,9 +9,14 @@ export default function Aside({ setMenu, menu }) {
             </div>
             <div className="flex flex-col items-center justify-center h-full">
                 <ul className="text-white uppercase text-4xl">
-                    <li className="cursor-pointer hover:text-sea mb-5">home</li>
-                    <li className="cursor-pointer hover:text-sea mb-5"><a href="#service">serviços</a></li>
-                    <li className="cursor-pointer hover:text-sea mb-5">contato</li>
+                    <li className="cursor-pointer hover:text-sea mb-5">
+                        <a href="#">home</a>
+                    </li>
+                    <li className="cursor-pointer hover:text-sea mb-5">
+                        <a href="#service">serviços</a></li>
+                    <li className="cursor-pointer hover:text-sea mb-5">
+                        <a href="#contact">contato</a>
+                    </li>
                 </ul>
             </div>
         </aside>

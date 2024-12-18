@@ -10,11 +10,15 @@ export default function Header({ setMenu, menu }) {
             </div>
             <div className="">
                 <ul className="md:flex uppercase text-white hidden">
-                    <li className="mx-4 cursor-pointer hover:text-sea">home</li>
+                    <li className="mx-4 cursor-pointer hover:text-sea">
+                        <a href="#">home</a>
+                    </li>
                     <li className="mx-4 cursor-pointer hover:text-sea">
                         <a href="#service">serviços</a>
                     </li>
-                    <li className="mx-4 cursor-pointer hover:text-sea">contato</li>
+                    <li className="mx-4 cursor-pointer hover:text-sea">
+                        <a href="#contact">contato</a>
+                    </li>
                 </ul>
                 <div className="flex text-white md:hidden flex-col gap-1 cursor-pointer" onClick={() => setMenu(!menu)}>
                     <span className="w-10 h-1 block bg-white rounded-sm"></span>

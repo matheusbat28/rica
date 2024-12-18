@@ -210,7 +210,7 @@ export default function Home() {
             {/* fim do nosso servicos */}
 
             {/* entre em contato */}
-            <div className="container-2xl mx-auto mt-36 py-24 bg-gradient-to-r from-sea to-sea2">
+            <div id="contact" className="container-2xl mx-auto mt-36 py-24 bg-gradient-to-r from-sea to-sea2">
                 <h1 className="uppercase text-center text-4xl text-white font-bold">entre em contato</h1>
                 <form action="">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
