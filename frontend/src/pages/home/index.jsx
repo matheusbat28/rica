@@ -12,6 +12,10 @@ import { Typewriter } from 'react-simple-typewriter';
 export default function Home() {
     const [currentSlide, setCurrentSlide] = React.useState(0);
     const [menu, setMenu] = React.useState(false);
+    const [name, setName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [subject, setSubject] = React.useState('');
+    const [message, setMessage] = React.useState('');
 
     const handleSlideChange = (index) => {
         setCurrentSlide(index);
@@ -210,10 +214,10 @@ export default function Home() {
                 <h1 className="uppercase text-center text-4xl text-white font-bold">entre em contato</h1>
                 <form action="">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
-                        <input type="text" placeholder="Nome" className="w-3/4 mx-auto p-5 rounded-lg " />
-                        <input type="email" placeholder="Email" className="w-3/4 mx-auto p-5 rounded-lg" />
-                        <input type="text" placeholder="Assunto" className="w-3/4 mx-auto p-5 rounded-lg" />
-                        <textarea name="" id="" cols="30" rows="2" placeholder="Mensagem" className="w-3/4 mx-auto p-5 rounded-lg"></textarea>
+                        <input type="text" placeholder="Nome" className="w-3/4 mx-auto p-5 rounded-lg " value={name} onChange={(e) => setName(e.target.value)} />
+                        <input type="email" placeholder="Email" className="w-3/4 mx-auto p-5 rounded-lg" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input type="text" placeholder="Assunto" className="w-3/4 mx-auto p-5 rounded-lg" value={subject} onChange={(e) => setSubject(e.target.value)} />
+                        <textarea name="" id="" cols="30" rows="2" placeholder="Mensagem" className="w-3/4 mx-auto p-5 rounded-lg" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                         <button className="w-1/3 mx-auto p-5 rounded-lg bg-white text-sea font-bold md:ml-28">Enviar</button>
                     </div>
                 </form>
