@@ -46,7 +46,7 @@ export default function Footer() {
                         </li>
                     </ul>
 
-                    <p className="mt-4 opacity-50">Rua 123, 123, Bairro - Cidade, Estado - CEP</p>
+                    <p className="mt-4 opacity-50">SC 281 km 8 colonia Santana são José SC</p>
 
                 </div>
             </div>

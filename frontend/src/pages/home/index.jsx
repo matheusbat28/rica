@@ -133,76 +133,15 @@ export default function Home() {
                 <h1 className="uppercase text-center text-4xl text-sea font-bold">nossos serviços</h1>
                 <p className="text-center mt-6 text-3xl opacity-50">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-20">
-                    <div className="bg-gray-100 rounded-lg">
-                        <img src="https://fotos-estradao-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/02/25222118/Transformers.jpg" alt="" className=" h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="rounded-lg">
-                        <img src="https://img0.icarros.com/dbimg/imgnoticia/4/14577_7" alt="" className="h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="bg-gray-100 rounded-lg">
-                        <img src="https://fotos-estradao-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/02/25222118/Transformers.jpg" alt="" className=" h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="rounded-lg">
-                        <img src="https://img0.icarros.com/dbimg/imgnoticia/4/14577_7" alt="" className="h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="bg-gray-100 rounded-lg">
-                        <img src="https://fotos-estradao-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/02/25222118/Transformers.jpg" alt="" className=" h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="rounded-lg">
-                        <img src="https://img0.icarros.com/dbimg/imgnoticia/4/14577_7" alt="" className="h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="bg-gray-100 rounded-lg">
-                        <img src="https://fotos-estradao-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/02/25222118/Transformers.jpg" alt="" className=" h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="rounded-lg">
-                        <img src="https://img0.icarros.com/dbimg/imgnoticia/4/14577_7" alt="" className="h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="bg-gray-100 rounded-lg">
-                        <img src="https://fotos-estradao-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/02/25222118/Transformers.jpg" alt="" className=" h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="rounded-lg">
-                        <img src="https://img0.icarros.com/dbimg/imgnoticia/4/14577_7" alt="" className="h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="bg-gray-100 rounded-lg">
-                        <img src="https://fotos-estradao-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/02/25222118/Transformers.jpg" alt="" className=" h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="rounded-lg">
-                        <img src="https://img0.icarros.com/dbimg/imgnoticia/4/14577_7" alt="" className="h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="bg-gray-100 rounded-lg">
-                        <img src="https://fotos-estradao-estadao.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2023/02/25222118/Transformers.jpg" alt="" className=" h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
-                    </div>
-                    <div className="rounded-lg">
-                        <img src="https://img0.icarros.com/dbimg/imgnoticia/4/14577_7" alt="" className="h-1/2 w-full" />
-                        <h1 className="text-3xl mt-5 px-10">Lorem ipsum dolor sit amet</h1>
-                        <p className="mt-5 px-10 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-20 lowercase">
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                        <img className="w-full" src="https://m.media-amazon.com/images/S/pv-target-images/44de16e6749ee340aeaf4e39d6bd077af542e1f69fdba4878df2a8dd0d024189._SX1080_FMjpg_.jpg" alt="Sunset in the mountains"></img>
+                        <div className="px-6 py-4">
+                            <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+                            <p className="text-gray-700 text-base">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
@@ -223,6 +162,16 @@ export default function Home() {
                 </form>
             </div>
             {/* fim do entre em contato */}
+
+            {/* botao whatsapp */}
+            <div className="fixed bottom-5 right-5">
+                <a href="https://api.whatsapp.com/send?phone=554896495355" target="_blank" rel="noreferrer">
+                    <button className="p-5 rounded-full bg-sea text-white">
+                        <i className="fab fa-whatsapp"></i>
+                    </button>
+                </a>
+            </div>
+            {/* fim do botao whatsapp */}
             <Footer />
         </div>
     );
