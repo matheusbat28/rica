@@ -8,6 +8,7 @@ import Img1 from "../../assets/img1.jpg";
 import Img2 from "../../assets/img2.jpg";
 import Img3 from "../../assets/img3.jpg";
 import { Typewriter } from 'react-simple-typewriter';
+import JsonServices from "../../controls/services.json";
 
 export default function Home() {
     const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -16,6 +17,12 @@ export default function Home() {
     const [email, setEmail] = React.useState('');
     const [subject, setSubject] = React.useState('');
     const [message, setMessage] = React.useState('');
+    const [services, setServices] = React.useState([]);
+
+    React.useEffect(() => {
+        setServices(JsonServices);
+    }, []);
+
 
     const handleSlideChange = (index) => {
         setCurrentSlide(index);
@@ -134,15 +141,17 @@ export default function Home() {
                 <p className="text-center mt-6 text-3xl opacity-50">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-20 lowercase">
-                    <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                        <img className="w-full" src="https://m.media-amazon.com/images/S/pv-target-images/44de16e6749ee340aeaf4e39d6bd077af542e1f69fdba4878df2a8dd0d024189._SX1080_FMjpg_.jpg" alt="Sunset in the mountains"></img>
-                        <div className="px-6 py-4">
-                            <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-                            <p className="text-gray-700 text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                            </p>
+                    {services.map((service, index) => (
+                        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                            <img className="w-full h-52" src={service.img} alt=""></img>
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2">{service.name}</div>
+                                <p className="text-gray-700 text-base">
+                                    {service.description}
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    ))}
 
                 </div>
             </div>
