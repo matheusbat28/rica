@@ -9,6 +9,7 @@ import Img2 from "../../assets/img2.jpg";
 import Img3 from "../../assets/img3.jpg";
 import { Typewriter } from 'react-simple-typewriter';
 import JsonServices from "../../controls/services.json";
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Home() {
     const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -175,8 +176,8 @@ export default function Home() {
             {/* botao whatsapp */}
             <div className="fixed bottom-5 right-5">
                 <a href="https://api.whatsapp.com/send?phone=554896495355" target="_blank" rel="noreferrer">
-                    <button className="p-5 rounded-full bg-sea text-white">
-                        <i className="fab fa-whatsapp"></i>
+                    <button className="p-2 rounded-full bg-green-500 text-white">
+                        <FaWhatsapp size={40} />
                     </button>
                 </a>
             </div>
