@@ -4,13 +4,12 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Header from "../../components/header";
 import Aside from "../../components/aside";
 import Footer from "../../components/footer";
-import Img1 from "../../assets/img1.jpg";
-import Img2 from "../../assets/img2.jpg";
-import Img3 from "../../assets/img3.jpg";
+import Img from "../../assets/img.png";
 import { Typewriter } from 'react-simple-typewriter';
 import JsonServices from "../../controls/services.json";
 import { FaWhatsapp } from 'react-icons/fa';
 import InputMask from 'react-input-mask';
+import Logo from "../../assets/logo.png";
 
 export default function Home() {
     const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -40,7 +39,7 @@ export default function Home() {
             <Header setMenu={setMenu} menu={menu} />
             <Aside setMenu={setMenu} menu={menu} />
             {/* carrocel */}
-            <div className="flex justify-center items-center">
+            {/* <div className="flex justify-center items-center">
                 <Carousel showThumbs={false} autoPlay infiniteLoop onChange={handleSlideChange} showStatus={false}>
                     <div className="relative">
                         <div className="absolute inset-0 flex justify-center items-center flex-col gap-9 text-white">
@@ -139,24 +138,30 @@ export default function Home() {
                         <img src={Img3} alt="" className="object-cover" style={{ width: '100%', height: '930px' }} />
                     </div>
                 </Carousel>
-            </div>
+            </div> */}
             {/* fim do carrocel */}
 
-            {/* nosso servicos */}
-            <div id="service" className="container mx-auto mt-36">
-                <h1 className="uppercase text-center text-4xl text-sea font-bold">nossos serviços</h1>
-                <p className="text-center mt-6 text-3xl opacity-50">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores veniam, qui dicta ex</p>
+            {/* img fixa */}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-20 lowercase">
+            <div className="flex justify-center items-center" style={{ position: 'relative' }}>
+                <img src={Img} alt="" className="object-cover" style={{ width: '100%', height: '650px' }} />
+                <div className="absolute rounded-2xl top-5 left-2" style={{ width: '28%' }}>
+                    <img src={Logo} alt="" style={{ width: '100%', height: 'auto' }} />
+                </div>
+            </div>
+
+            {/* fim da img fixa */}
+
+            {/* nosso servicos */}
+            <div id="service" className="container mx-auto mt-20">
+                <h1 className="uppercase text-center text-4xl text-sea font-bold">nossos serviços</h1>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-2 lowercase">
                     {services.map((service, index) => (
-                        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                            <img className="w-full h-52" src={service.img} alt=""></img>
-                            <div className="px-6 py-4">
-                                <div className="font-bold text-xl mb-2">{service.name}</div>
-                                <p className="text-gray-700 text-base">
-                                    {service.description}
-                                </p>
-                            </div>
+                        <div key={index} className="">
+                            <img src={service.img} alt="" className="object-cover w-full h-52" />
+                            <h1 className="text-lg text-center font-bold text-sea mx-5 mt-5">{service.name}</h1>
+                            <p className="text-sm text-gray-500 mx-5 mt-3 mb-4">{service.service}</p>
                         </div>
                     ))}
 
@@ -165,8 +170,8 @@ export default function Home() {
             {/* fim do nosso servicos */}
 
             {/* entre em contato */}
-            <div id="contact" className="container-2xl mx-auto mt-36 py-24 bg-gradient-to-r from-sea to-sea2">
-                <h1 className="uppercase text-center text-4xl text-white font-bold">entre em contato</h1>
+            <div id="contact" className="container-2xl mx-auto mt-20 py-24 bg-gradient-to-r from-sea to-sea2">
+                <h1 className="uppercase text-center text-5xl text-white font-bold">entre em contato</h1>
                 <form onSubmit={sandEmail}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
                         <input type="text" placeholder="Nome" className="w-3/4 mx-auto p-5 rounded-lg " value={name} onChange={(e) => setName(e.target.value)} />

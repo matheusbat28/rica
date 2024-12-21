@@ -1,15 +1,13 @@
 import React from "react";
-import Logo from "../assets/logo.png";
 
 export default function Header({ setMenu, menu }) {
 
     return (
-        <header className="w-full p-4 flex justify-between items-center absolute z-40 px-3.5 bg-black bg-opacity-5">
+        <header className="w-full p-4 flex justify-between items-center absolute z-40 px-3.5">
             <div className="">
-                <img src={Logo} alt="" className=" h-16 md:h-20" />
             </div>
             <div className="">
-                <ul className="md:flex uppercase text-white hidden">
+                <ul className="md:flex uppercase text-white hidden my-3">
                     <li className="mx-4 cursor-pointer hover:text-sea">
                         <a href="#">home</a>
                     </li>

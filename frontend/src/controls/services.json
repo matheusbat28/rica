@@ -1,86 +1,35 @@
 [
     {
         "id": 1,
-        "img": "./src/assets/s1.jpeg",
+        "img": "./src/assets/s1.jpg",
         "name": "Captação, tratamento e distribuição de água potável",
-        "price": 100
+        "service": "24 horas 7 Dias por semana Sábado domingo e feriados"
     },
+
     {
         "id": 2,
-        "img": "./src/assets/s2.jpg",
-        "name": "Limpeza de maquinários, equipamentos, pátios, tuneis e pontes",
-        "price": 200
+        "img": "./src/assets/s7.jpg",
+        "name": "Lavação de ruas,  pátios , obras e outros"
     },
     {
         "id": 3,
-        "img": "./src/assets/s3.jpeg",
-        "name": "APOIO A TESTES INDUSTRIAIS",
-        "price": 300
+        "img": "./src/assets/s12.jpg",
+        "name": "Locação de caminhões pipa",
+        "service": "por hora,  diária  mensal ou semanal"
     },
     {
         "id": 4,
-        "img": "./src/assets/s4.webp",
-        "name": "LOCAÇÃO E OPERAÇÃO DE MOTOBOMBAS",
-        "price": 400
+        "img": "./src/assets/s4.jpg",
+        "name": "Soluções completas em transporte e abastecimento de água potável"
     },
     {
         "id": 5,
-        "img": "./src/assets/s5.jpg",
-        "name": "LOCAÇÃO DE RESERVATÓRIO TEMPORÁRIO OU FIXO",
-        "price": 500
+        "img": "./src/assets/s5.png",
+        "name": "Transporte de máquinas e equipamentos pesados"
     },
     {
         "id": 6,
         "img": "./src/assets/s6.jpg",
-        "name": "Caminhão e bombas para auxílio ao combate de incêndio",
-        "price": 600
-    },
-    {
-        "id": 7,
-        "img": "./src/assets/s7.jpeg",
-        "name": "LAVAÇÃO E IRRIGAÇÃO DE RUAS E JARDINS",
-        "price": 700
-    },
-    {
-        "id": 8,
-        "img": "./src/assets/s8.jpg",
-        "name": "Locação de caminhões tanque e reservatórios",
-        "price": 800
-    },
-    {
-        "id": 9,
-        "img": "./src/assets/s9.png",
-        "name": "Soluções em transporte e abastecimento de água potável",
-        "price": 900
-    },
-    {
-        "id": 10,
-        "img": "./src/assets/s10.jpg",
-        "name": "Atendemos residências, prédios, condomínios, industria, hospitais entre outros",
-        "price": 1000
-    },
-    {
-        "id": 11,
-        "img": "./src/assets/s11.jpeg",
-        "name": "Água potável para cisternas,  caixas d água, piscina",
-        "price": 1100
-    },
-    {
-        "id": 12,
-        "img": "./src/assets/s12.webp",
-        "name": "lavação e irrigação de ruas e jardins",
-        "price": 1200
-    },
-    {
-        "id": 13,
-        "img": "./src/assets/s13.jpg",
-        "name": "Chuva artificial para gravação de filmagens, comerciais, e todo setor cinematográfico",
-        "price": 1200
-    },
-    {
-        "id": 14,
-        "img": "./src/assets/s14.jpg",
-        "name": "Locação de caminhões ",
-        "price": 1200
+        "name": "Escavadeira hidráulica disponível para locação"
     }
 ]
