@@ -5,10 +5,9 @@
         "name": "Captação, tratamento e distribuição de água potável",
         "service": "24 horas 7 Dias por semana Sábado domingo e feriados"
     },
-
     {
         "id": 2,
-        "img": "./src/assets/s7.jpg",
+        "img": "./src/assets/s2.jpg",
         "name": "Lavação de ruas,  pátios , obras e outros"
     },
     {
@@ -31,5 +30,40 @@
         "id": 6,
         "img": "./src/assets/s6.jpg",
         "name": "Escavadeira hidráulica disponível para locação"
+    },
+    {
+        "id": 7,
+        "img": "./src/assets/s7.jpg",
+        "name": "Limpeza de maquinários, equipamentos, pátios, tuneis e pontes"
+    },
+    {
+        "id": 8,
+        "img": "./src/assets/s8.jpg",
+        "name": "APOIO A TESTES INDUSTRIAIS"
+    },
+    {
+        "id": 9,
+        "img": "./src/assets/s9.webp",
+        "name": "LOCAÇÃO E OPERAÇÃO DE MOTOBOMBAS"
+    },
+    {
+        "id": 10,
+        "img": "./src/assets/s10.jpg",
+        "name": "LOCAÇÃO DE RESERVATÓRIO TEMPORÁRIO OU FIXO"
+    },
+    {
+        "id": 11,
+        "img": "./src/assets/s11.jpeg",
+        "name": "LAVAÇÃO E IRRIGAÇÃO DE RUAS E JARDINS"
+    },
+    {
+        "id": 12,
+        "img": "./src/assets/s12.jpg",
+        "name": "Locação de caminhões tanque e reservatórios"
+    },
+    {
+        "id": 13,
+        "img": "./src/assets/s13.jpg",
+        "name": "Locação de caminhões tanque e reservatórios"
     }
 ]
