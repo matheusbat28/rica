@@ -143,10 +143,10 @@ export default function Home() {
 
             {/* img fixa */}
 
-            <div className="flex justify-center items-center" style={{ position: 'relative' }}>
-                <img src={Img} alt="" className="object-cover" style={{ width: '100%', height: '650px' }} />
-                <div className="absolute rounded-2xl top-5 left-2" style={{ width: '28%' }}>
-                    <img src={Logo} alt="" style={{ width: '100%', height: 'auto' }} />
+            <div className="image-container">
+                <img src={Img} alt="" className="main-image" />
+                <div className="logo-container">
+                    <img src={Logo} alt="" className="logo-image" />
                 </div>
             </div>
 
@@ -154,7 +154,7 @@ export default function Home() {
 
             {/* nosso servicos */}
             <div id="service" className="container mx-auto mt-20">
-                <h1 className="uppercase text-center text-4xl text-sea font-bold">nossos serviços</h1>
+                <h1 className="uppercase text-center text-3xl md:text-4xl text-sea font-bold">nossos serviços</h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-2 lowercase">
                     {services.map((service, index) => (

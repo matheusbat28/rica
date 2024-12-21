@@ -8,7 +8,7 @@ export default function Aside({ setMenu, menu }) {
                 <IoMdClose className="text-white text-4xl cursor-pointer" />
             </div>
             <div className="flex flex-col items-center justify-center h-full">
-                <ul className="text-white uppercase text-4xl">
+                <ul className="text-white text-center uppercase text-4xl">
                     <li className="cursor-pointer hover:text-sea mb-5">
                         <a href="#">home</a>
                     </li>

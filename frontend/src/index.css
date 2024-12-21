@@ -9,3 +9,50 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: 650px;
+    object-cover: cover;
+  }
+  
+  .logo-container {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    width: 28%;
+    border-radius: 1rem;
+  }
+  
+  .logo-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .main-image {
+      height: 400px;
+    }
+  
+    .logo-container {
+      width: 40%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-image {
+      height: 200px;
+    }
+  
+    .logo-container {
+      width: 50%;
+    }
+  }
