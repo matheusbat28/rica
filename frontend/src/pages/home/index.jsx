@@ -142,19 +142,18 @@ export default function Home() {
             {/* fim do carrocel */}
 
             {/* img fixa */}
-
             <div className="image-container">
                 <img src={Img} alt="" className="main-image" />
                 <div className="logo-container">
                     <img src={Logo} alt="" className="logo-image" />
                 </div>
             </div>
-
             {/* fim da img fixa */}
 
             {/* nosso servicos */}
             <div id="service" className="container mx-auto mt-20">
                 <h1 className="uppercase text-center text-3xl md:text-4xl text-sea font-bold">nossos serviços</h1>
+                <p className="text-center text-gray-500 mt-5">Todos os serviços são disponibilizados 24 horas por dia, todos os dias da semana, incluindo sábados, domingos e feriados.</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-2 lowercase">
                     {services.map((service, index) => (
