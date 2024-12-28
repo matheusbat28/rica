@@ -155,12 +155,12 @@ export default function Home() {
                 <h1 className="uppercase text-center text-3xl md:text-4xl text-sea font-bold">nossos serviços</h1>
                 <p className="text-center text-gray-500 mt-5">Todos os serviços são disponibilizados 24 horas por dia, todos os dias da semana, incluindo sábados, domingos e feriados.</p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-2 lowercase">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-2">
                     {services.map((service, index) => (
                         <div key={index} className="">
                             <img src={service.img} alt="" className="object-cover w-full h-52" />
                             <h1 className="text-lg text-center font-bold text-sea mx-5 mt-5">{service.name}</h1>
-                            <p className="text-sm text-gray-500 mx-5 mt-3 mb-4">{service.service}</p>
+                            <p className="text-sm text-center text-gray-500 mx-5 mt-3 mb-4">{service.service}</p>
                         </div>
                     ))}
 
