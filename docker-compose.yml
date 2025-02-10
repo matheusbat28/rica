@@ -1,6 +1,15 @@
 version: '3'
 
 services:
+  db:
+      image: postgres:latest
+      restart: always
+      environment:
+        POSTGRES_DB: ${POSTGRES_DB}
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      volumes:
+        - db-data:/var/lib/postgresql/data
   frontend:
     build: ./frontend
     volumes:
@@ -20,3 +29,6 @@ services:
       - '443:443'
     depends_on:
       - frontend
+
+volumes:
+  db-data:
