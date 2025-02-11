@@ -1,18 +1,16 @@
 import React from "react";
-import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Header from "../../components/header";
 import Aside from "../../components/aside";
 import Footer from "../../components/footer";
 import Img from "../../assets/img.png";
-import { Typewriter } from 'react-simple-typewriter';
+import { getServices } from "../../controls/service";
 import JsonServices from "../../controls/services.json";
 import { FaWhatsapp } from 'react-icons/fa';
 import InputMask from 'react-input-mask';
 import Logo from "../../assets/logo.png";
 
 export default function Home() {
-    const [currentSlide, setCurrentSlide] = React.useState(0);
     const [menu, setMenu] = React.useState(false);
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
@@ -21,13 +19,18 @@ export default function Home() {
     const [services, setServices] = React.useState([]);
 
     React.useEffect(() => {
-        setServices(JsonServices);
+        async function fetchServices() {
+            await getServices().then((response) => {
+                if (response) {
+                    setServices(response);
+                } else {
+                    setServices(JsonServices);
+                }
+            });
+        }
+
+        fetchServices();
     }, []);
-
-
-    const handleSlideChange = (index) => {
-        setCurrentSlide(index);
-    };
 
     const sandEmail = (e) => {
         e.preventDefault();
@@ -58,7 +61,7 @@ export default function Home() {
                         <div key={index} className="">
                             <img src={service.img} alt="" className="object-cover w-full h-52" />
                             <h1 className="text-lg text-center font-bold text-sea mx-5 mt-5">{service.name}</h1>
-                            <p className="text-sm text-center text-gray-500 mx-5 mt-3 mb-4">{service.service}</p>
+                            <p className="text-sm text-center text-gray-500 mx-5 mt-3 mb-4">{service.description}</p>
                         </div>
                     ))}
 
