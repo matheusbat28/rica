@@ -46,6 +46,8 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - /etc/letsencrypt:/etc/letsencrypt
+      - static:/app/staticfiles
+      - media:/app/media
     ports:
       - '80:80'
       - '443:443'
