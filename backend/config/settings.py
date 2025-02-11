@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'djoser',
+    'services',
     'django_filters',
     'django.contrib.admin',
     'django.contrib.auth',
