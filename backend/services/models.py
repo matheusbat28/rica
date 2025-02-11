@@ -1,6 +1,7 @@
 from django.db import models
 
 class Service(models.Model):
+    img = models.ImageField(upload_to='services/', null=True, blank=True)
     name = models.CharField(max_length=100)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
