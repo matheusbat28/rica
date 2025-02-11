@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Logs
+*.log
+
+# Environments
+.env
+venv/
+ENV/
+
+# Build output
+build/
+dist/
+*.egg-info/
+
+# db
+*.sqlite3
+
+media/*
+!media/.gitkeep
+!media/email_img/
+staticfiles/
