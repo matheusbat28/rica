@@ -11,7 +11,7 @@ class ServiceAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
     fieldsets = (
         ('Service Information', {
-            'fields': ('name', 'description')
+            'fields': ('img', 'name', 'description')
         }),
         ('Date Information', {
             'fields': ('created_at', 'updated_at')
