@@ -29,6 +29,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('HOST')]
 
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+ASGI_APPLICATION = 'config.asgi.application'
+
+
 
 # Application definition
 
