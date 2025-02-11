@@ -9,13 +9,24 @@ export default function Header({ setMenu, menu }) {
             <div className="">
                 <ul className="md:flex uppercase bg-white hidden my-3 p-3 rounded-lg font-bold">
                     <li className="mx-4 cursor-pointer text-sea">
-                        <a href="#">home</a>
+                        <a href="#">
+                            home
+                        </a>
                     </li>
                     <li className="mx-4 cursor-pointer text-sea">
-                        <a href="#service">serviços</a>
+                        <a href="#service">
+                            serviços
+                        </a>
                     </li>
                     <li className="mx-4 cursor-pointer text-sea">
-                        <a href="#contact">contato</a>
+                        <a href="#contact">
+                            contato
+                        </a>
+                    </li>
+                    <li className="mx-4 cursor-pointer text-sea">
+                        <a>
+                            login
+                        </a>
                     </li>
                 </ul>
                 <div className="flex text-white md:hidden flex-col gap-1 cursor-pointer mt-4" onClick={() => setMenu(!menu)}>

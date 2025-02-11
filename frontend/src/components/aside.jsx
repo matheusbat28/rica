@@ -17,6 +17,9 @@ export default function Aside({ setMenu, menu }) {
                     <li className="cursor-pointer hover:text-sea mb-5">
                         <a href="#contact">contato</a>
                     </li>
+                    <li className="cursor-pointer hover:text-sea mb-5">
+                        <a>login</a>
+                    </li>
                 </ul>
             </div>
         </aside>
