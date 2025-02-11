@@ -5,7 +5,6 @@ import Aside from "../../components/aside";
 import Footer from "../../components/footer";
 import Img from "../../assets/img.png";
 import { getServices } from "../../controls/service";
-import JsonServices from "../../controls/services.json";
 import { FaWhatsapp } from 'react-icons/fa';
 import InputMask from 'react-input-mask';
 import Logo from "../../assets/logo.png";
