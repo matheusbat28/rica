@@ -1,7 +1,11 @@
 import React from "react";
 import { IoMdClose } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 export default function Aside({ setMenu, menu }) {
+
+    const navigate = useNavigate();
+
     return (
         <aside className={`w-full h-full bg-black bg-opacity-80 fixed top-0 left-0 z-50 transition-opacity duration-500 ${menu ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
             <div className="flex flex-col p-4" onClick={() => setMenu(!menu)}>
@@ -17,7 +21,7 @@ export default function Aside({ setMenu, menu }) {
                     <li className="cursor-pointer hover:text-sea mb-5">
                         <a href="#contact">contato</a>
                     </li>
-                    <li className="cursor-pointer hover:text-sea mb-5">
+                    <li className="cursor-pointer hover:text-sea mb-5" onClick={() => navigate("/login")}>
                         <a>login</a>
                     </li>
                 </ul>

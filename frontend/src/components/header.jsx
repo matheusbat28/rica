@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Header({ setMenu, menu }) {
+
+    const navigate = useNavigate();
 
     return (
         <header className="w-full p-4 flex justify-between items-center absolute z-40 px-3.5">
@@ -23,7 +26,7 @@ export default function Header({ setMenu, menu }) {
                             contato
                         </a>
                     </li>
-                    <li className="mx-4 cursor-pointer text-sea">
+                    <li className="mx-4 cursor-pointer text-sea" onClick={() => navigate("/login")}>
                         <a>
                             login
                         </a>
