@@ -1,4 +1,5 @@
 import React from "react";
+import { createService } from '../../../controls/service';
 
 export default function CreateService() {
 
@@ -8,9 +9,19 @@ export default function CreateService() {
         description: "",
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
+        const data = new FormData();
+        data.append('img', formData.img);
+        data.append('name', formData.name);
+        data.append('description', formData.description);
+
+        await createService(data).then((response) => {
+            console.log(response);
+
+        }).catch((error) => {
+            console.log(error);
+        });
     };
 
     return (
