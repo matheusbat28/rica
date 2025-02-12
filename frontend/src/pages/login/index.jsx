@@ -1,6 +1,7 @@
 import React from "react";
 import { login } from "../../controls/login";
 import img from '../../assets/img.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const [formData, setFormData] = React.useState({
@@ -8,6 +9,7 @@ export default function Login() {
         password: "",
     });
 
+    const navigate = useNavigate();
     const [errorUsername, setErrorUsername] = React.useState(false);
     const [errorPassword, setErrorPassword] = React.useState(false);
 
@@ -38,6 +40,9 @@ export default function Login() {
         }
 
         await login(formData).then((response) => {
+            if (response) {
+                navigate("/");
+            }
         }).catch((error) => {
             console.log(error);
         });

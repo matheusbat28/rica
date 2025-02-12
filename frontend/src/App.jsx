@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import Login from './pages/login';
+import CreateService from './pages/service/create';
+import { useNavigate } from 'react-router-dom';
+import { isLogged, logout } from './controls/login';
 
 export default function App() {
 
@@ -35,6 +38,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/service/create" element={<PrivateRoute element={<CreateService />} />} />
       </Routes>
     </Router>
   );
