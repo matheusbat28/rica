@@ -3,7 +3,7 @@ import { isLogged } from '../login';
 
 export const getServices = async () => {
     try {
-        const response = await axios.get('/services');
+        const response = await axios.get('services');
         return response.data;
     } catch (error) {
         return error;
@@ -11,16 +11,24 @@ export const getServices = async () => {
 };
 
 export const createService = async (formData) => {
+    const logged = isLogged();
+
+    if (!logged) {
+        return false;
+    }
+
+    const accessToken = localStorage.getItem('access');
+
     try {
-        const token = isLogged();
-        const response = await axios.post('/services', formData, {
+        const response = await axios.post('services', formData, {
             headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'multipart/form-data',
-            },
+                'Authorization': `Bearer ${accessToken}`,
+                'Content-Type': 'multipart/form-data'
+            }
         });
         return response.data;
-    } catch (error) {
+    }
+    catch (error) {
         return error;
     }
-};
+};  

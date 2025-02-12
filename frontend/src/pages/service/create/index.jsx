@@ -16,6 +16,7 @@ export default function CreateService() {
         data.append('name', formData.name);
         data.append('description', formData.description);
 
+        console.log(data);
         await createService(data).then((response) => {
             console.log(response);
 
