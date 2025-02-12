@@ -1,4 +1,5 @@
 import React from "react";
+import { login } from "../../controls/login";
 import img from '../../assets/img.png';
 
 export default function Login() {
@@ -14,12 +15,21 @@ export default function Login() {
         });
     }
 
+    async function handleSubmit(event) {
+        event.preventDefault();
+        await login(formData).then((response) => {
+            if (response) {
+            }
+        });
+
+    }
+
     return (
         <div className="relative min-h-screen flex items-center justify-center">
             <img src={img} className="absolute inset-0 w-full h-full object-cover" alt="img" />
             <div className="relative bg-white p-8 rounded-md w-full max-w-md mx-4 sm:mx-auto">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
-                <form>
+                <form onSubmit={handleSubmit} className="mt-4">
                     <div className="mb-4">
 
                         <input
