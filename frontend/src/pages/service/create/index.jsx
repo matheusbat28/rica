@@ -1,5 +1,8 @@
 import React from "react";
 import { createService } from '../../../controls/service';
+import { useNavigate } from 'react-router-dom';
+import Messages from '../../../components/messages';
+import { handleErrors } from '../../../controls/functions';
 
 export default function CreateService() {
 
@@ -8,6 +11,8 @@ export default function CreateService() {
         name: "",
         description: "",
     });
+    const navigate = useNavigate();
+    const [message, setMessage] = React.useState({});
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -18,15 +23,33 @@ export default function CreateService() {
 
         console.log(data);
         await createService(data).then((response) => {
-            console.log(response);
+            if (response.status === 201) {
+                setMessage({
+                    type: "success",
+                    message: "Serviço criado com sucesso!",
+                });
+            } else {
+                setMessage({
+                    type: "error",
+                    message: handleErrors(response.response.data),
+                });
+            }
 
         }).catch((error) => {
-            console.log(error);
+            setMessage({
+                type: "error",
+                message: handleErrors(error.response.data),
+            });
         });
     };
 
     return (
         <div className="h-screen flex justify-center items-center bg-gradient-to-r from-blue-700 to-blue-500">
+            <div className="absolute top-4 left-4">
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => navigate(-1)}>
+                    Voltar
+                </button>
+            </div>
             <div className="bg-white p-8 rounded-lg shadow-2xl w-96">
                 <h1 className="text-2xl font-bold text-center mb-6">Criar Serviço</h1>
                 <form onSubmit={handleSubmit}>
@@ -70,6 +93,7 @@ export default function CreateService() {
                     </div>
                 </form>
             </div>
+            {message.message && <Messages type={message.type} message={message.message} setMessage={setMessage} />}
         </div>
     );
 }
