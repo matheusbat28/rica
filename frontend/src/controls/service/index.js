@@ -31,4 +31,49 @@ export const createService = async (formData) => {
     catch (error) {
         return error;
     }
-};  
+}; 
+
+export const updateService = async (id, formData) => {
+    const logged = isLogged();
+
+    if (!logged) {
+        return false;
+    }
+
+    const accessToken = localStorage.getItem('access');
+
+    try {
+        const response = await axios.put(`services/${id}/`, formData, {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`,
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+        return response;
+    }
+    catch (error) {
+        return error;
+    }
+};
+
+export const deleteService = async (id) => {
+    const logged = isLogged();
+
+    if (!logged) {
+        return false;
+    }
+
+    const accessToken = localStorage.getItem('access');
+
+    try {
+        const response = await axios.delete(`services/${id}/`, {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        });
+        return response;
+    }
+    catch (error) {
+        return error;
+    }
+};

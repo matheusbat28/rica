@@ -38,7 +38,7 @@ export default function Messages(props) {
     }, [props.type]);
 
     return (
-        <div className={`flex items-center ${bgColor} ${textColor} text-sm font-bold px-4 py-3 absolute top-3 left-3 `} role="alert">
+        <div className={`flex items-center ${bgColor} ${textColor} text-sm font-bold px-4 py-3 absolute top-3 right-3 `} role="alert">
             {Icon && <Icon className="fill-current w-4 h-4 mr-2" />}
             <p>{props.message}</p>
         </div>

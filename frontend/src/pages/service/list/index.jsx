@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { getServices } from "../../../controls/service";
+import { getServices, deleteService } from "../../../controls/service";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 export default function ServiceList() {
@@ -39,8 +39,25 @@ export default function ServiceList() {
         }
     };
 
+    const handleDelete = async (id) => {
+        await deleteService(id).then((response) => {
+            if (response) {
+                const newServices = services.filter((service) => service.id !== id);
+                setServices(newServices);
+            }
+        });
+    }
+
     return (
         <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-700 to-blue-500">
+            <div>
+                <button
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute top-0 left-2 mt-5 mr-5"
+                    onClick={() => navigate(-1)}
+                >
+                    Voltar
+                </button>
+            </div>
             <header className="text-white text-3xl font-bold mb-8 mt-5">
                 Lista de Serviços
             </header>
@@ -58,14 +75,14 @@ export default function ServiceList() {
                             <tr key={service.id} className="hover:bg-gray-100">
                                 <td className="border px-4 py-2">{service.name || '-----'}</td>
                                 <td className="border px-4 py-2">{service.description || '-----'}</td>
-                                <td className="border px-4 py-2 flex justify-center">
+                                <td className="border px-4 py-2 flex space-x-2">
                                     <button
-                                        className="bg-blue-500 text-white px-4 py-2 rounded mr-2 flex items-center"
+                                        className="bg-blue-500 text-white px-4 py-2 rounded"
                                         onClick={() => navigate(`/service/edit/${service.id}`)}
                                     >
                                         <FaEdit />
                                     </button>
-                                    <button className="bg-red-500 text-white px-4 py-2 rounded flex items-center">
+                                    <button className="bg-red-500 text-white px-4 py-2 rounded" onClick={() => handleDelete(service.id)}>
                                         <FaTrash />
                                     </button>
                                 </td>
