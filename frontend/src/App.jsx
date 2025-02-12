@@ -4,9 +4,10 @@ import Home from './pages/home';
 import Login from './pages/login';
 import CreateService from './pages/service/create';
 import ListService from './pages/service/list';
+import EditService from './pages/service/edit';
 import { useNavigate } from 'react-router-dom';
 import { isLogged, logout } from './controls/login';
-
+import { useParams } from 'react-router-dom';
 export default function App() {
 
   function PrivateRoute({ element, ...rest }) {
@@ -34,6 +35,12 @@ export default function App() {
     return logged ? element : null;
   }
 
+  function EditServiceWrapper() {
+    const { id } = useParams();
+    return <EditService id={id} />;
+  }
+
+
   return (
     <Router>
       <Routes>
@@ -41,6 +48,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/service/create" element={<PrivateRoute element={<CreateService />} />} />
         <Route path="/service/list" element={<PrivateRoute element={<ListService />} />} />
+        <Route path="/service/edit/:id" element={<PrivateRoute element={<EditServiceWrapper />} />} />
       </Routes>
     </Router>
   );
