@@ -6,8 +6,9 @@ import Footer from "../../components/footer";
 import Img from "../../assets/img.png";
 import { getServices } from "../../controls/service";
 import { FaWhatsapp, FaClipboardList, FaPlus } from 'react-icons/fa';
-import InputMask from 'react-input-mask';
 import Logo from "../../assets/logo.png";
+import { isLogged, logout } from "../../controls/login";
+import InputMask from 'react-input-mask';
 
 export default function Home() {
     const [menu, setMenu] = React.useState(false);
@@ -16,6 +17,7 @@ export default function Home() {
     const [fone, setFone] = React.useState('');
     const [message, setMessage] = React.useState('');
     const [services, setServices] = React.useState([]);
+    const [isAuthenticated, setIsAuthenticated] = React.useState(false);
 
     React.useEffect(() => {
         async function fetchServices() {
@@ -30,6 +32,17 @@ export default function Home() {
 
         fetchServices();
     }, []);
+
+    React.useEffect(() => {
+        async function checkLogin() {
+            const response = await isLogged();
+            console.log(response);
+            setIsAuthenticated(response);
+        }
+
+        checkLogin();
+    }, []);
+
 
     const sandEmail = (e) => {
         e.preventDefault();
@@ -51,30 +64,32 @@ export default function Home() {
             {/* fim da img fixa */}
 
             {/* nosso servicos */}
-            <div id="service" className="container mx-auto mt-20 px-4">
-                <div className="flex flex-col md:flex-row justify-center items-center">
-                    <div className="flex flex-col justify-center text-center md:text-left">
-                        <h1 className="uppercase text-3xl md:text-4xl text-sea font-bold">nossos serviços</h1>
-                        <p className="text-gray-500 mt-5">Todos os serviços são disponibilizados 24 horas por dia, todos os dias da semana, incluindo sábados, domingos e feriados.</p>
+            <div id="service" className="container mx-auto mt-20">
+                <div className="flex justify-center md:flex-row items-center flex-col relative">
+                    <div className="flex justify-center flex-col">
+                        <h1 className="uppercase text-center text-3xl md:text-4xl text-sea font-bold">nossos serviços</h1>
+                        <p className="text-center text-gray-500 mt-5">Todos os serviços são disponibilizados 24 horas por dia, todos os dias da semana, incluindo sábados, domingos e feriados.</p>
                     </div>
-                    <div className="flex justify-center mt-10 md:mt-0 md:absolute md:right-5">
+                    {isAuthenticated && (<div className="flex justify-center mt-10 md:absolute md:right-5  relative">
                         <div className="flex justify-center items-center bg-sea rounded-full p-2">
                             <FaPlus className="text-white text-xl" />
                         </div>
                         <div className="flex justify-center items-center bg-sea rounded-full p-2 ml-2">
                             <FaClipboardList className="text-white text-xl" />
                         </div>
-                    </div>
+                    </div>)}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-4">
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-2">
                     {services.map((service, index) => (
-                        <div key={index} className="flex flex-col items-center">
+                        <div key={index} className="">
                             <img src={service.img} alt="" className="object-cover w-full h-52" />
-                            <h1 className="text-lg font-bold text-sea mt-5">{service.name}</h1>
-                            <p className="text-sm text-gray-500 mt-3 mb-4">{service.description}</p>
+                            <h1 className="text-lg text-center font-bold text-sea mx-5 mt-5">{service.name}</h1>
+                            <p className="text-sm text-center text-gray-500 mx-5 mt-3 mb-4">{service.description}</p>
                         </div>
                     ))}
+
                 </div>
             </div>
             {/* fim do nosso servicos */}
@@ -86,7 +101,13 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
                         <input type="text" placeholder="Nome" className="w-3/4 mx-auto p-5 rounded-lg " value={name} onChange={(e) => setName(e.target.value)} />
                         <input type="email" placeholder="Email" className="w-3/4 mx-auto p-5 rounded-lg" value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <InputMask mask="(99) 99999-9999" placeholder="Telefone" className="w-3/4 mx-auto p-5 rounded-lg" value={fone} onChange={(e) => setFone(e.target.value)} />
+                        <InputMask
+                            mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                            placeholder="Telefone"
+                            className="w-3/4 mx-auto p-5 rounded-lg"
+                            value={fone}
+                            onChange={(e) => setFone(e.target.value)}
+                        />
                         <textarea name="" id="" cols="30" rows="2" placeholder="Mensagem" className="w-3/4 mx-auto p-5 rounded-lg" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                         <button className="w-1/3 mx-auto p-5 rounded-lg bg-white text-sea font-bold md:ml-28">Enviar</button>
                     </div>

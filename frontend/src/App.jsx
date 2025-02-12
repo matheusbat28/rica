@@ -14,10 +14,9 @@ export default function App() {
         const response = await isLogged();
         setLogged(response);
         if (response) {
-          await getMe();
         } else {
           logout();
-          navigate("/login");
+          navigate("/");
         }
       };
 
@@ -30,7 +29,7 @@ export default function App() {
 
     return logged ? element : null;
   }
-  
+
   return (
     <Router>
       <Routes>
