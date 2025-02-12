@@ -7,6 +7,7 @@ export default function ServiceList() {
     const [services, setServices] = React.useState([]);
     const [currentPage, setCurrentPage] = React.useState(1);
     const [itemsPerPage] = React.useState(8);
+    const [searchTerm, setSearchTerm] = React.useState("");
     const navigate = useNavigate();
 
     React.useEffect(() => {
@@ -25,10 +26,14 @@ export default function ServiceList() {
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentServices = services.slice(indexOfFirstItem, indexOfLastItem);
+    const filteredServices = services.filter(service =>
+        service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    const currentServices = filteredServices.slice(indexOfFirstItem, indexOfLastItem);
 
     const nextPage = () => {
-        if (currentPage < Math.ceil(services.length / itemsPerPage)) {
+        if (currentPage < Math.ceil(filteredServices.length / itemsPerPage)) {
             setCurrentPage(currentPage + 1);
         }
     };
@@ -62,6 +67,13 @@ export default function ServiceList() {
                 Lista de Serviços
             </header>
             <div className="container mx-auto p-4 bg-white rounded-lg shadow-lg mb-6">
+                <input
+                    type="text"
+                    placeholder="Pesquisar..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="mb-4 p-2 border rounded w-full"
+                />
                 <table className="table-auto w-full">
                     <thead>
                         <tr className="bg-blue-600 text-white">
@@ -100,7 +112,7 @@ export default function ServiceList() {
                     </button>
                     <button
                         onClick={nextPage}
-                        disabled={currentPage === Math.ceil(services.length / itemsPerPage)}
+                        disabled={currentPage === Math.ceil(filteredServices.length / itemsPerPage)}
                         className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
                     >
                         Próximo
