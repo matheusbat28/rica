@@ -76,10 +76,10 @@ export default function Home() {
                         <p className="text-center text-gray-500 mt-5">Todos os serviços são disponibilizados 24 horas por dia, todos os dias da semana, incluindo sábados, domingos e feriados.</p>
                     </div>
                     {isAuthenticated && (<div className="flex justify-center mt-10 md:absolute md:right-5  relative">
-                        <div className="flex justify-center items-center bg-sea rounded-full p-2" onClick={() => navigate('/service/create')}>
+                        <div className="flex justify-center items-center bg-sea rounded-full p-2 cursor-pointer" onClick={() => navigate('/service/create')} title="Adicionar serviço">
                             <FaPlus className="text-white text-xl" />
                         </div>
-                        <div className="flex justify-center items-center bg-sea rounded-full p-2 ml-2">
+                        <div className="flex justify-center items-center bg-sea rounded-full p-2 ml-2" onClick={() => navigate('/service/list')} title="Listar serviços">
                             <FaClipboardList className="text-white text-xl" />
                         </div>
                     </div>)}
