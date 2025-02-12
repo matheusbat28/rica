@@ -5,7 +5,7 @@ import Aside from "../../components/aside";
 import Footer from "../../components/footer";
 import Img from "../../assets/img.png";
 import { getServices } from "../../controls/service";
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaClipboardList, FaPlus } from 'react-icons/fa';
 import InputMask from 'react-input-mask';
 import Logo from "../../assets/logo.png";
 
@@ -51,19 +51,30 @@ export default function Home() {
             {/* fim da img fixa */}
 
             {/* nosso servicos */}
-            <div id="service" className="container mx-auto mt-20">
-                <h1 className="uppercase text-center text-3xl md:text-4xl text-sea font-bold">nossos serviços</h1>
-                <p className="text-center text-gray-500 mt-5">Todos os serviços são disponibilizados 24 horas por dia, todos os dias da semana, incluindo sábados, domingos e feriados.</p>
+            <div id="service" className="container mx-auto mt-20 px-4">
+                <div className="flex flex-col md:flex-row justify-center items-center">
+                    <div className="flex flex-col justify-center text-center md:text-left">
+                        <h1 className="uppercase text-3xl md:text-4xl text-sea font-bold">nossos serviços</h1>
+                        <p className="text-gray-500 mt-5">Todos os serviços são disponibilizados 24 horas por dia, todos os dias da semana, incluindo sábados, domingos e feriados.</p>
+                    </div>
+                    <div className="flex justify-center mt-10 md:mt-0 md:absolute md:right-5">
+                        <div className="flex justify-center items-center bg-sea rounded-full p-2">
+                            <FaPlus className="text-white text-xl" />
+                        </div>
+                        <div className="flex justify-center items-center bg-sea rounded-full p-2 ml-2">
+                            <FaClipboardList className="text-white text-xl" />
+                        </div>
+                    </div>
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-20 gap-4">
                     {services.map((service, index) => (
-                        <div key={index} className="">
+                        <div key={index} className="flex flex-col items-center">
                             <img src={service.img} alt="" className="object-cover w-full h-52" />
-                            <h1 className="text-lg text-center font-bold text-sea mx-5 mt-5">{service.name}</h1>
-                            <p className="text-sm text-center text-gray-500 mx-5 mt-3 mb-4">{service.description}</p>
+                            <h1 className="text-lg font-bold text-sea mt-5">{service.name}</h1>
+                            <p className="text-sm text-gray-500 mt-3 mb-4">{service.description}</p>
                         </div>
                     ))}
-
                 </div>
             </div>
             {/* fim do nosso servicos */}
