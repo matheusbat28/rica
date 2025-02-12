@@ -5,7 +5,7 @@ export async function login(data) {
         const response = await axios.post("/auth/jwt/create", data);
         localStorage.setItem("access", response.data.access);
         localStorage.setItem("refresh", response.data.refresh);
-        return true;
+        return response;
     } catch (error) {
         return error;
     }

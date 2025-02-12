@@ -2,6 +2,8 @@ import React from "react";
 import { login } from "../../controls/login";
 import img from '../../assets/img.png';
 import { useNavigate } from 'react-router-dom';
+import Messages from "../../components/messages";
+import { handleErrors } from "../../controls/functions";
 
 export default function Login() {
     const [formData, setFormData] = React.useState({
@@ -12,6 +14,7 @@ export default function Login() {
     const navigate = useNavigate();
     const [errorUsername, setErrorUsername] = React.useState(false);
     const [errorPassword, setErrorPassword] = React.useState(false);
+    const [message, setMessage] = React.useState({});
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -39,13 +42,31 @@ export default function Login() {
             return;
         }
 
-        await login(formData).then((response) => {
-            if (response) {
-                navigate("/");
+        try {
+            const response = await login(formData);
+            
+            if (response.status === 200) {
+                setMessage({
+                    type: "success",
+                    message: "Login efetuado com sucesso!",
+                });
+                setTimeout(() => {
+                    navigate('/');
+                }, 1000);
             }
-        }).catch((error) => {
+            else {
+                setMessage({
+                    type: "error",
+                    message: handleErrors(response.response.data),
+                });
+            }
+        } catch (error) {
             console.log(error);
-        });
+            setMessage({
+                type: "error",
+                message: handleErrors(error.response.data),
+            });
+        }
     }
 
     return (
@@ -86,6 +107,8 @@ export default function Login() {
                     </button>
                 </form>
             </div>
+            {message.message && <Messages type={message.type} message={message.message} setMessage={setMessage} />}
+
         </div>
     );
 }
