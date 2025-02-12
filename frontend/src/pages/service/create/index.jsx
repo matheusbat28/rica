@@ -46,7 +46,7 @@ export default function CreateService() {
     return (
         <div className="h-screen flex justify-center items-center bg-gradient-to-r from-blue-700 to-blue-500">
             <div className="absolute top-4 left-4">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => navigate(-1)}>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => navigate('/')}>
                     Voltar
                 </button>
             </div>

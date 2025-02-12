@@ -53,7 +53,7 @@ export default function ServiceList() {
             <div>
                 <button
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute top-0 left-2 mt-5 mr-5"
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate('/')}
                 >
                     Voltar
                 </button>
