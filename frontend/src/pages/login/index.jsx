@@ -44,7 +44,7 @@ export default function Login() {
 
         try {
             const response = await login(formData);
-            
+
             if (response.status === 200) {
                 setMessage({
                     type: "success",
@@ -72,6 +72,11 @@ export default function Login() {
     return (
         <div className="relative min-h-screen flex items-center justify-center">
             <img src={img} className="absolute inset-0 w-full h-full object-cover" alt="img" />
+            <div>
+                <button className="absolute top-4 left-4 bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => navigate('/')}>
+                    Voltar
+                </button>
+            </div>
             <div className="relative bg-white p-8 rounded-md w-full max-w-md mx-4 sm:mx-auto">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form onSubmit={handleSubmit} className="mt-4">

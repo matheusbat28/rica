@@ -19,7 +19,7 @@ export default function App() {
         if (response) {
         } else {
           logout();
-          navigate("/");
+          navigate("/login");
         }
       };
 
